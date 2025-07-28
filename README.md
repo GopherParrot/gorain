@@ -147,7 +147,7 @@ Then run:
  ```bash
  C:\Users\<YourUsername>\go\bin
  ```
-## IMPORTANT: replace <YourUsername> with your real username
+> ## IMPORTANT: replace <YourUsername> with your real username
 - Click OK, restart terminal ✅
 
 ---
