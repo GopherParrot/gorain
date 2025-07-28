@@ -8,10 +8,10 @@ You should check out his awesome creation!
 
 ## Code Preview
 ### Calm Rain
-<img src="https://i.ibb.co/jZ5CFrRv/ezgif-2f2e52fc37abfa.gif" alt="calmrain" width="380" height="500">
+<img src="https://i.ibb.co/jZ5CFrRv/ezgif-2f2e52fc37abfa.gif" alt="calmrain" width="350" height="500">
 
 ### Thunderstorm
-<img src="https://i.ibb.co/Y4b47Dg8/ezgif-260c1d5c115c6f.gif" alt="thunderstorm" width="480" height="600">
+<img src="https://i.ibb.co/Y4b47Dg8/ezgif-260c1d5c115c6f.gif" alt="thunderstorm" width="350" height="500">
 
 > **Yes, all done with Termux :)**
 
