@@ -6,6 +6,16 @@
 You should check out his awesome creation!
 > https://github.com/rmaake1/terminal-rain-lightning
 
+## Code Preview
+### Calm Rain
+<img src="https://i.ibb.co/Y4b47Dg8/ezgif-260c1d5c115c6f.gif" width="480" height="600">
+
+### Thunderstorm
+<img src="https://i.ibb.co/jZ5CFrRv/ezgif-2f2e52fc37abfa.gif" width="480" height="600">
+
+---
+## ⚙️ Features
+
 - **Customizable colors** for raindrops and lightning 🌩️ 
 - **Thunderstorm Mode** - toggle for intense rain and epic lightning bursts!
 - **Responsive design** - works on various terminal sizes and devices (e.g. Termux, etc)
