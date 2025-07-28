@@ -13,6 +13,7 @@ You should check out his awesome creation!
 ### Thunderstorm
 <img src="https://i.ibb.co/Y4b47Dg8/ezgif-260c1d5c115c6f.gif" alt="thunderstorm" width="480" height="600">
 
+> **Yes, all done with Termux :)**
 
 ---
 ## ⚙️ Features
