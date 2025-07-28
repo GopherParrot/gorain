@@ -126,7 +126,7 @@ Or if you never change your `GOPATH`, it's usually:
  $HOME/go/bin
  ```
 
-## ⚒️ How to Add to PATH
+## ⚒️ How to add Go to PATH
 ### 1. Linux /macOS / Termux:
 Add this line to your shell config (like .bashrc, .zshrc, or .profile):
  ```bash
