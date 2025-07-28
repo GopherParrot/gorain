@@ -101,3 +101,6 @@ Use `go env` to see all Go paths and config:
  ```bash
  go env
  ```
+---
+
+# Now to the fun part :)
