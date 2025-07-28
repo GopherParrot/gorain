@@ -3,7 +3,7 @@
 
 ### Inspired my rmaake1's rain project
 
-You should check out his awesome creation!
+You should check out his awesome creation! to
 > https://github.com/rmaake1/terminal-rain-lightning
 
 - **Customizable colors** for raindrops and lightning 🌩️ 
@@ -103,4 +103,55 @@ Use `go env` to see all Go paths and config:
  ```
 ---
 
-# Now to the fun part :)
+## Now to the fun part :)
+
+### ⚒️ Using `go install` (recommended)
+if you have Go installed, you can install **gorain** directly from the terminal:
+ ```bash
+ go install github.com/GopherParrot/gorain@latest
+ ```
+Then run it with:
+ ```bash
+ gorain
+ ```
+
+---
+
+To be able to run your Go program from **anywhere in the terminal**,you need to make sure this folder is in your system's `PATH`:
+ ```bash
+ $GOPATH/bin
+ ```
+Or if you never change your `GOPATH`, it's usually:
+ ```bash
+ $HOME/go/bin
+ ```
+
+## ⚒️ How to Add to PATH
+### 1. Linux /macOS / Termux:
+Add this line to your shell config (like .bashrc, .zshrc, or .profile):
+ ```bash
+ export PATH="$HOME/go/bin:$PATH"
+ ```
+Then run:
+ ```bash
+ source ~/.bashrc # or .zshrc, depending on your shell
+ ```
+
+---
+
+### 2. Windows:
+- Search for "**Environment Variables**" in Start menu
+- Click "**Edit environment variables for your account**"
+- Under **User variables**, find or create a `PATH` variable
+- Add this path:
+ ```bash
+ C:\Users\<YourUsername>\go\bin
+ ```
+- Click OK, restart terminal ✅
+
+---
+### Once you do that, you'll be able to just type:
+ ```bash
+ gorain
+ ```
+from anywhere 😁
