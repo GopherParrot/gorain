@@ -204,12 +204,12 @@ gorain [OPTIONS]
     <th>Default</th>
   </tr>
   <tr>
-    <th>`--rain-color <COLOR>`</th>
+    <th>`--rain-color <<COLOR>>`</th>
     <th>Set the color of the raindrops</th>
     <th>Cyan</th>
   </tr>
   <tr>
-    <th>`--lightning-color <COLOR>`</th>
+    <th>`--lightning-color <<COLOR>>`</th>
     <th>Set the color of the lightning</th>
     <th>Yellow</th>
   </tr>
