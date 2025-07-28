@@ -1,9 +1,9 @@
 # <p align="center">gorain 🌧️</p>
 > **Get a rainy vibe in your terminal**
 
-### Inspired my rmaake1's rain project
+### Inspired by rmaake1's rain project
 
-You should check out his awesome creation! to
+You should check out his awesome creation!
 > https://github.com/rmaake1/terminal-rain-lightning
 
 - **Customizable colors** for raindrops and lightning 🌩️ 
@@ -147,7 +147,6 @@ Then run:
  ```bash
  C:\Users\<YourUsername>\go\bin
  ```
-> ## IMPORTANT: replace <YourUsername> with your real username
 - Click OK, restart terminal ✅
 
 ---
