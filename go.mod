@@ -4,7 +4,7 @@ go 1.24.5
 
 require (
         github.com/gdamore/tcell/v2 v2.8.1
-        github.com/mattn/go-isatty v0.0.20
+        Golang.org/x/term v0.28.0
 )
 
 require (
