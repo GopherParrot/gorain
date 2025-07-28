@@ -74,7 +74,7 @@ Make sure Go's `bin` folder is in your system `PATH`
 ### Example (Linux/Termux):
  ```bash
  export PATH=$PATH:$HOME/go/bin
-
+ ```
 ---
 
 ### Windows:
