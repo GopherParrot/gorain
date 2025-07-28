@@ -1,4 +1,4 @@
-module rain
+module github.com/GopherParrot/gorain
 
 go 1.24.5
 
