@@ -167,3 +167,65 @@ Then run:
  gorain
  ```
 from anywhere 😁
+
+## How to Use
+After installing, just run:
+```bash
+gorain
+```
+
+### Controls
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <th>`t`/`T`</th>
+    <th>Toggle Thunderstorm mode ⛈️</th>
+  </tr>
+  <tr>
+    <th>`p`/`Q`/`Esc`/`Ctrl+C`</th>
+    <th>Quit the program</th>
+  </tr>
+</table>
+
+---
+
+## Command-line options
+```bash
+gorain [OPTIONS]
+```
+
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <th>`--rain-color <COLOR>`</th>
+    <th>Set the color of the raindrops</th>
+    <th>Cyan</th>
+  </tr>
+  <tr>
+    <th>`--lightning-color <COLOR>`</th>
+    <th>Set the color of the lightning</th>
+    <th>Yellow</th>
+  </tr>
+  <tr>
+    <th>`--help`</th>
+    <th>Show help message and exit</th>
+    <th>--</th>
+  </tr>
+</table>
+
+## Available colors:
+`black`,`red`,`green`,`yellow`,`blue`,`magenta`,`cyan`,`white`
+
+## Example:
+```bash
+gorain --rain-color green --lightning-color white
+```
+
+Thanks for spending your time reading this :)
