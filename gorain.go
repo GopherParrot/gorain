@@ -3,7 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io"
+
+	//"io" will use later (probably)
 	"log"
 	"math"
 	"math/rand"
@@ -22,15 +23,15 @@ import (
 
 // Configuration constants
 const (
-	updateInterval      = 15 * time.Millisecond
-	rainChars           = "|.`"
-	lightningChance     = 0.1 // Increased for easier testing, adjust as needed
-	lightningGrowthDelay = 2 * time.Millisecond
-	lightningMaxBranches = 2
+	updateInterval        = 15 * time.Millisecond
+	rainChars             = "|.`"
+	lightningChance       = 0.1 // Increased for easier testing, adjust as needed
+	lightningGrowthDelay  = 2 * time.Millisecond
+	lightningMaxBranches  = 2
 	lightningBranchChance = 0.3
-	forkChance          = 0.15
-	forkHorizontalSpread = 3
-	segmentLifespan     = 800 * time.Millisecond
+	forkChance            = 0.15
+	forkHorizontalSpread  = 3
+	segmentLifespan       = 800 * time.Millisecond
 )
 
 // Raindrop represents a falling raindrop
@@ -337,7 +338,7 @@ func simulateRain(screen tcell.Screen, muteFlag bool, volume float64, rainColor,
 				// Corrected targetLength calculation to match Python's random.randint(min, max) behavior
 				// Go's rand.Intn(n) gives [0, n-1]. To get [A, B], use rand.Intn(B - A + 1) + A.
 				// Here, A = maxY/2, B = maxY - 2.
-				targetLength := rand.Intn((maxY - 2) - (maxY/2) + 1) + (maxY/2)
+				targetLength := rand.Intn((maxY-2)-(maxY/2)+1) + (maxY / 2)
 				activeBolts = append(activeBolts, &LightningBolt{
 					segments:       []LightningSegment{{startRow, startCol, time.Now()}},
 					startCol:       startCol,
@@ -406,11 +407,17 @@ func simulateRain(screen tcell.Screen, muteFlag bool, volume float64, rainColor,
 // runApp contains the main logic of the application, returning an error if something goes wrong.
 func runApp() error {
 	// Command-line flags for customization
+	versionFlag := flag.Bool("version", false, "Print version information and exit") // New version flag
 	volume := flag.Float64("volume", 1.0, "Volume level for rain and thunder sounds (0.0 to 1.0)")
 	muteFlag := flag.Bool("mute", false, "Disable rain and thunder sounds")
 	rainColor := flag.String("rain-color", "cyan", "Color for the rain (black, red, green, yellow, blue, magenta, cyan, white)")
 	lightningColor := flag.String("lightning-color", "yellow", "Color for the lightning (black, red, green, yellow, blue, magenta, cyan, white)")
 	flag.Parse()
+
+	if *versionFlag {
+		fmt.Println("GoRain Simulator v1.0.1 - Audio Fixes & Version Flag") // Version string
+		return nil                                                          // Exit after printing version
+	}
 
 	// Initialize the audio speaker once at the start of the program.
 	if err := initAudio(); err != nil {
@@ -458,7 +465,6 @@ func main() {
 		os.Exit(1)
 	}
 }
-
 
 /*package main
 
