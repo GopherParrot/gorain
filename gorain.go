@@ -466,7 +466,8 @@ func main() {
 	}
 }
 
-/*package main
+/* previous code, in case the updated code didnt work
+package main
 
 import (
 	"flag"
