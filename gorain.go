@@ -10,7 +10,7 @@ import (
 	"golang.org/x/term"
 )
 
-// Configuration constants
+// configuration constants
 const (
 	updateInterval        = 15 * time.Millisecond
 	rainChars             = "|.`"
@@ -46,7 +46,7 @@ type LightningSegment struct {
 	createdTime time.Time
 }
 
-// Color mapping
+// color mapping
 var colorMap = map[string]tcell.Color{
 	"black":   tcell.ColorBlack,
 	"red":     tcell.ColorRed,
@@ -63,6 +63,9 @@ var (
 	rainStyle      tcell.Style
 	lightningStyle tcell.Style
 )
+
+// TODO: fix this
+// wdym fix this? like fix what??
 
 // setupColors initializes styles for rain and lightning
 func setupColors(rainColor, lightningColor string) {
@@ -82,7 +85,7 @@ func setupColors(rainColor, lightningColor string) {
 func (bolt *LightningBolt) update() bool {
 	currentTime := time.Now()
 
-	// Growth
+	// growth
 	if bolt.isGrowing && currentTime.Sub(bolt.lastGrowthTime) >= lightningGrowthDelay {
 		bolt.lastGrowthTime = currentTime
 		var newSegments []LightningSegment
@@ -109,7 +112,7 @@ func (bolt *LightningBolt) update() bool {
 				addedSegment = true
 			}
 
-			// Add secondary forks
+			// add secondary forks
 			if rand.Float64() < forkChance {
 				forkOffset := rand.Intn(2*forkHorizontalSpread+1) - forkHorizontalSpread
 				if forkOffset == 0 {
@@ -135,7 +138,7 @@ func (bolt *LightningBolt) update() bool {
 		}
 	}
 
-	// Check for removal
+	// check for removal
 	allExpired := true
 	for _, seg := range bolt.segments {
 		if currentTime.Sub(seg.createdTime) <= segmentLifespan {
@@ -181,7 +184,7 @@ func (bolt *LightningBolt) draw(screen tcell.Screen) {
 	}
 }
 
-// Helper functions
+// helper functions
 func max(a, b int) int {
 	if a > b {
 		return a
@@ -204,7 +207,7 @@ func simulateRain(screen tcell.Screen, rainColor, lightningColor string) error {
 	activeBolts := []*LightningBolt{}
 	isThunderstorm := false
 
-	// Event channel for input
+	// event channel for input
 	events := make(chan tcell.Event)
 	go func() {
 		for {
@@ -214,7 +217,7 @@ func simulateRain(screen tcell.Screen, rainColor, lightningColor string) error {
 
 	lastUpdateTime := time.Now()
 	for {
-		// Handle input
+		// input handler
 		select {
 		case ev := <-events:
 			switch ev := ev.(type) {
@@ -239,7 +242,7 @@ func simulateRain(screen tcell.Screen, rainColor, lightningColor string) error {
 				activeBolts = nil
 			}
 		default:
-			// Frame rate control
+			// frame rate control
 			currentTime := time.Now()
 			deltaTime := currentTime.Sub(lastUpdateTime)
 			if deltaTime < updateInterval {
@@ -247,7 +250,7 @@ func simulateRain(screen tcell.Screen, rainColor, lightningColor string) error {
 			}
 			lastUpdateTime = time.Now()
 
-			// Update lightning
+			// update lightning
 			maxX, maxY := screen.Size()
 			var nextBolts []*LightningBolt
 			if isThunderstorm && len(activeBolts) < 3 && rand.Float64() < lightningChance {
@@ -322,18 +325,18 @@ func simulateRain(screen tcell.Screen, rainColor, lightningColor string) error {
 }
 
 func main() {
-	// Command-line flags
+	// command line flags
 	rainColor := flag.String("rain-color", "cyan", "Color for the rain (black, red, green, yellow, blue, magenta, cyan, white)")
 	lightningColor := flag.String("lightning-color", "yellow", "Color for the lightning (black, red, green, yellow, blue, magenta, cyan, white)")
 	flag.Parse()
 
-	// Validate terminal
+	// validate terminal
 	if !term.IsTerminal(int(os.Stdout.Fd())) {
 		println("Error: This program requires a TTY with terminal support.")
 		os.Exit(1)
 	}
 
-	// Initialize tcell
+	// initialize tcell
 	screen, err := tcell.NewScreen()
 	if err != nil {
 		println("Error initializing screen:", err)
@@ -345,7 +348,7 @@ func main() {
 	}
 	defer screen.Fini()
 
-	// Run simulation
+	// run simulation
 	if err := simulateRain(screen, *rainColor, *lightningColor); err != nil {
 		screen.Fini()
 		println("Error during simulation:", err)
