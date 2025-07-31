@@ -64,8 +64,8 @@ var (
 	lightningStyle tcell.Style
 )
 
-// TODO: fix this
-// wdym fix this? like fix what??
+// TODO: update here
+// wdym update here? like adding wat??
 
 // setupColors initializes styles for rain and lightning
 func setupColors(rainColor, lightningColor string) {
