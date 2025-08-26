@@ -83,9 +83,9 @@ var (
 	rainStyle      tcell.Style
 	lightningStyle tcell.Style
 	snowStyle      tcell.Style
-	starStyle      tcell.Style
-	moonStyle      tcell.Style
-	moonChar       rune
+	//starStyle      tcell.Style
+	moonStyle tcell.Style
+	moonChar  rune
 )
 
 // setupColors initializes styles for all elements
@@ -114,7 +114,7 @@ func setupColors(rainColor, lightningColor, snowColor, moonColor, mChar string) 
 	rainStyle = tcell.StyleDefault.Foreground(fgRain).Background(tcell.ColorDefault)
 	lightningStyle = tcell.StyleDefault.Foreground(fgLightning).Background(tcell.ColorDefault).Bold(true)
 	snowStyle = tcell.StyleDefault.Foreground(fgSnow).Background(tcell.ColorDefault)
-	starStyle = tcell.StyleDefault.Foreground(tcell.ColorGray).Background(tcell.ColorDefault).Dim(true)
+	//starStyle = tcell.StyleDefault.Foreground(tcell.ColorGray).Background(tcell.ColorDefault).Dim(true)
 	moonStyle = tcell.StyleDefault.Foreground(fgMoon).Background(tcell.ColorDefault).Bold(true)
 }
 
@@ -382,15 +382,22 @@ func simulateRain(screen tcell.Screen, rainColor, lightningColor, snowColor, moo
 			}
 			snowflakes = nextSnowflakes
 
-			// Drawing
+			// drawing
 			screen.Clear()
 
-			// Draw background if night mode is active (always draw first)
+			// draw background if night mode is active (always draw first)
 			if isNight {
 				for _, star := range stars {
 					if int(star.x) < maxX && int(star.y) < maxY {
-						style := starStyle
-						// Add a small random chance to make the star appear bold (brighter)
+						// set the star's base style. The color is now conditional based on the weather.
+						style := tcell.StyleDefault.Background(tcell.ColorDefault).Dim(true)
+						if isSnowing {
+							style = style.Foreground(tcell.ColorGray)
+						} else {
+							style = style.Foreground(tcell.ColorWhite)
+						}
+
+						// add a small random chance to make the star appear bold (brighter)
 						if rand.Float64() < 0.005 {
 							style = style.Bold(true)
 						}
@@ -400,7 +407,7 @@ func simulateRain(screen tcell.Screen, rainColor, lightningColor, snowColor, moo
 				drawMoon(screen, maxX/2, moonChar, moonStyle)
 			}
 
-			// Draw weather effects if not hidden (always draw on top of background)
+			// draw weather effects if not hidden (always draw on top of background)
 			if !isWeatherHidden {
 				for _, bolt := range activeBolts {
 					bolt.draw(screen)
@@ -462,3 +469,4 @@ func main() {
 	}
 }
 
+// parrot :P
