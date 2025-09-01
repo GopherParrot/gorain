@@ -7,6 +7,7 @@ You should check out his awesome creation!
 > https://github.com/rmaake1/terminal-rain-lightning
 
 ## Code Preview
+
 ### Calm Rain
 <img src="https://i.ibb.co/jZ5CFrRv/ezgif-2f2e52fc37abfa.gif" alt="calmrain" width="350" height="500">
 
