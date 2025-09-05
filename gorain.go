@@ -29,14 +29,14 @@ const (
 	moonYPosition         = 5
 )
 
-// Raindrop represents a falling raindrop
+// raindrop represents a falling raindrop
 type Raindrop struct {
 	x, y  float64
 	speed float64
 	char  rune
 }
 
-// Snowflake represents a falling snowflake
+// snowflake represents a falling snowflake
 type Snowflake struct {
 	x, y  float64
 	speed float64
@@ -60,7 +60,7 @@ type LightningSegment struct {
 	createdTime time.Time
 }
 
-// Star represents a background star
+// star represents a background star
 type Star struct {
 	x, y float64
 	char rune
