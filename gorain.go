@@ -320,6 +320,7 @@ func simulateRain(screen tcell.Screen, rainColor, lightningColor, snowColor, moo
 					maxX:           maxX,
 				})
 			}
+			
 			for _, bolt := range activeBolts {
 				if bolt.update() {
 					nextBolts = append(nextBolts, bolt)
@@ -347,6 +348,7 @@ func simulateRain(screen tcell.Screen, rainColor, lightningColor, snowColor, moo
 					}
 				}
 			}
+			
 			var nextRaindrops []Raindrop
 			for _, drop := range raindrops {
 				drop.y += drop.speed
@@ -372,6 +374,7 @@ func simulateRain(screen tcell.Screen, rainColor, lightningColor, snowColor, moo
 					}
 				}
 			}
+			
 			var nextSnowflakes []Snowflake
 			for _, flake := range snowflakes {
 				flake.y += flake.speed
