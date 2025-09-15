@@ -12,7 +12,7 @@ import (
 	"golang.org/x/term"
 )
 
-// configuration constants
+//configuration constants
 const (
 	updateInterval        = 15 * time.Millisecond
 	rainChars             = "|.`"
@@ -29,7 +29,7 @@ const (
 	moonYPosition         = 5
 )
 
-// raindrop represents a falling raindrop
+//raindrop represents a falling raindrop
 type Raindrop struct {
 	x, y  float64
 	speed float64
