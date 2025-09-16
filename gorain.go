@@ -59,13 +59,11 @@ type LightningSegment struct {
 	y, x        int
 	createdTime time.Time
 }
-
 // star represents a background star
 type Star struct {
 	x, y float64
 	char rune
 }
-
 // color mapping
 var colorMap = map[string]tcell.Color{
 	"black":   tcell.ColorBlack,
@@ -87,7 +85,6 @@ var (
 	moonStyle tcell.Style
 	moonChar  rune
 )
-
 // setupColors initializes styles for all elements
 func setupColors(rainColor, lightningColor, snowColor, moonColor, mChar string) {
 	fgRain, ok := colorMap[rainColor]
