@@ -59,11 +59,13 @@ type LightningSegment struct {
 	y, x        int
 	createdTime time.Time
 }
+
 // star represents a background star
 type Star struct {
 	x, y float64
 	char rune
 }
+
 // color mapping
 var colorMap = map[string]tcell.Color{
 	"black":   tcell.ColorBlack,
